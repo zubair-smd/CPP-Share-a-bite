@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/global.css' %}" rel="stylesheet">
+    <link href="{% static 'css/about.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geologica&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], input[type="number"], input[type="tel"], input[type="date"], textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+    {% include 'index.html' %}
+
+    <div class="container">
+        <h2>Food Details</h2>
+        <form method="POST" action="{% url 'household_add_donation' %}" onsubmit="return validateExpiryDate()">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="food_type">Food Type</label>
+                <input type="text" pattern="[A-Za-z\s]+" id="food_type" name="food_type" required placeholder="Enter food type">
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity (Enough for number of person)</label>
+                <input type="number" id="quantity" name="quantity" required placeholder="Enter quantity">
+            </div>
+
+            <div class="form-group">
+                <label for="expiry">Expiry (Till date can be consumed)</label>
+                <input type="date" id="expiry" name="expiry" required placeholder="Select expiry date">
+            </div>
+
+            <button type="submit">Add Donation Request</button>
+        </form>
+    </div>
+
+    <script>
+        function validateExpiryDate() {
+            const expiryInput = document.getElementById('expiry');
+            const selectedDate = new Date(expiryInput.value);
+            const currentDate = new Date();
+            
+            // Set time to 0 for comparison purposes
+            currentDate.setHours(0, 0, 0, 0);
+            
+            if (selectedDate <= currentDate) {
+                alert('The expiry date must be greater than the current date.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

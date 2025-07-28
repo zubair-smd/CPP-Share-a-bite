@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    {% extends 'admin_sidebar.html' %}
+    {% block content %}
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Donation Information</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'assets/vendors/feather/feather.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/ti-icons/css/themify-icons.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/css/vendor.bundle.base.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" />
+    </head>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input:read-only,
+        .form-group select:disabled {
+            background-color: #e9ecef;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group select option {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+    <body>
+
+
+
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+              <a class="text-black p-0 navbar-brand fw-bold" href="{%url 'admin_dashboard'%}"><i style="color:#d53f34;" class="fa fa-star-o col_red  me-1"></i> ShareABite <br> </a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+              <ul class="navbar-nav mr-lg-2">
+                <li class="nav-item nav-search d-none d-lg-block">
+                  <div class="input-group">
+                    <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                      <span class="input-group-text" id="search">
+                        <i class="icon-search"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+                  </div>
+                </li>
+              </ul>
+              <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-profile dropdown">
+                  <a class="nav-link dropdown-toggle" href="{%url 'logout'%}">
+                    logout
+                  </a>
+                </li>
+              </ul>
+              <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="icon-menu"></span>
+              </button>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            <h2>Donation Information</h2>
+            <form method="POST" action="{% url 'admin_assign_ngo' %}">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="food_type">Food Type</label>
+                    <input type="text" id="food_type" name="food_type" value="{{ data.3 }}" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" id="quantity" name="quantity" value="{{ data.5 }}" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="expiry">Expiry</label>
+                    <input type="text" id="expiry" name="expiry" value="{{ data.4 }}" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ngo">Assign to NGO</label>
+                    <select id="ngo_id" name="ngo_id" required>
+                        {% for ngo in ngos %}
+                        <option name="ngo_id" value="{{ ngo.0 }}">{{ ngo.1 }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="hidden" name="donation_id" value="{{ data.0 }}">
+                <input type="hidden" name="household_id" value="{{ household.0 }}">
+                
+                
+                <button type="submit" class="btn btn-primary">Assign NGO</button>
+            </form>
+        </div>
+
+        <script src="{% static 'assets/vendors/js/vendor.bundle.base.js' %}"></script>
+        <script src="{% static 'assets/js/template.js' %}"></script>
+        {% endblock content %}
+    </body>
+</html>

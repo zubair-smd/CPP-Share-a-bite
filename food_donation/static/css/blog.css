@@ -1,0 +1,117 @@
+/*
+Template Name: Charity
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+
+/*********************blog****************/
+.tags a {
+border: 1px solid #717577;
+display: inline-block;
+font-size: 15px !important;
+line-height: 23px;
+color: #ffffff;
+font-weight: 500;
+margin-right: 5px;
+margin-bottom: 10px;
+background: #717577;
+border-radius: 2px;
+padding: 3px 10px;
+transition: 0.3s; 
+}
+.tags a:hover {
+background: #fff;
+color:#333;
+border: 1px solid #d53f34;
+}
+
+.contact_1r h4 i{
+width:40px;
+height:40px;
+line-height:38px; 
+ }
+/*********************blog_end****************/
+
+
+@media screen and (max-width : 767px){
+.blog_1dt1il{
+text-align:center; 
+ }
+.blog_1dt1il p{
+text-align:left; 
+ }
+.blog_1dt1ilir{
+margin-top:15px; 
+ }
+.blog_1dt1ir{
+margin-top:15px; 
+ }
+.blog_h1m2o h4{
+text-align:center; 
+ }
+.blog_1dt1i1{
+padding:15px!important; 
+ }
+.blog_dt1r4 h3{
+text-align:center; 
+ }
+.blog_dt1r4ir h6{
+font-size:16px!important; 
+ }
+.blog_dt1r5 h3{
+text-align:center; 
+ }
+.blog_dt1r5il .form-control{
+margin-top:10px; 
+ }
+.blog_dt1r5il h6{
+text-align:center;
+ }
+.contact_1l{
+padding:15px!important;
+text-align:center; 
+ }
+.contact_1l p{
+text-align:left; 
+ }
+.contact_1lil{
+margin-top:10px; 
+ }
+.contact_1r{
+margin-top:20px;  
+ }
+.contact_1r{
+text-align:center;
+ }
+ }
+
+
+@media (min-width:576px) and (max-width:767px) {
+
+ }
+ 
+@media (min-width:768px) and (max-width:991px) {
+.blog_1dt1ilil .font_70{
+font-size:40px!important; 
+ }
+.blog_1dt1ilil .font_60{
+font-size:40px!important; 
+ }
+ }
+
+@media (min-width:992px) and (max-width:1200px) {
+.blog_1dt1ilil .font_70{
+font-size:40px!important; 
+ }
+.blog_1dt1ilil .font_60{
+font-size:40px!important; 
+ }
+ }
+@media (min-width:1201px) and (max-width:1310px) {
+
+ }
+
+
+

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" >
+	<link href="{% static 'css/global.css' %}"rel="stylesheet">
+	<link href="{% static 'css/about.css' %}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Geologica&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+	<script src="js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+{%if registration_number%}
+    {% include "ngo_navbar.html" %}
+{%else%}
+    {% include "index.html" %}
+{%endif%}
+
+<section id="center" style="background-image: url('{% static "img/banner4.png" %}');" class="center_about">
+<div class="center_o bg_backn">
+ <div class="container-xl">
+ <div class="row center_o1 text-center">
+   <div class="col-md-12">
+     <h1 class="text-white">About Us</h1>
+	<hr class="line mb-0 mx-auto">
+   </div>
+ </div>
+</div>
+</div>
+</section>
+
+<section id="about" class="p_3">
+<div class="container-xl">
+ <div class="row about_1">
+    <div class="col-md-7">
+	  <div class="about_1l">
+	    <h3 class="family_1 col_red">
+Help With Featured Cause</h3>
+	<h1 class="mb-0 mt-3 font_50">Educate Children In
+Rural Areas Our Priority</h1>
+<p class="mt-3 mb-0">Ever since I was a little kid in primary school I’ve watched kids slip through the cracks and fall out of the education system due to poverty. That’s why education is our first priority.</p>
+   <div class="about_1li row mt-4">
+     <div class="col-md-6">
+	   <div class="about_1lil">
+	      <div class="about_1lili row">
+		    <div class="col-md-3">
+			  <div class="about_1lilil">
+			    <span class="font_70 col_blue lh-1"><i class="fa fa-globe"></i></span>
+			  </div>
+			</div>
+			<div class="col-md-9">
+			  <div class="about_1lilir">
+			    <h1 class="font_50 col_yell">1.2k</h1>
+				<h6 class="mb-0">Finished Projects</h6>
+			  </div>
+			</div>
+		  </div>
+	   </div>
+	 </div>
+	 <div class="col-md-6">
+	   <div class="about_1lir">
+	     <p class="mb-0 mt-1">We have already built 1.3k schools all
+over the world to educate children.</p>
+	   </div>
+	 </div>
+   </div>
+   <div class="about_1li row mt-4">
+     <div class="col-md-6">
+	   <div class="about_1lil">
+	      <div class="about_1lili row">
+		    <div class="col-md-3">
+			  <div class="about_1lilil">
+			    <span class="font_70 col_green lh-1"><i class="fa fa-rupee"></i></span>
+			  </div>
+			</div>
+			<div class="col-md-9">
+			  <div class="about_1lilir">
+			    <h1 class="font_50 col_red">4m</h1>
+				<h6 class="mb-0">Finished Projects</h6>
+			  </div>
+			</div>
+		  </div>
+	   </div>
+	 </div>
+	 <div class="col-md-6">
+	   <div class="about_1lir">
+	     <p class="mb-0 mt-1">Donate money to build more schools
+and help to educate them.</p>
+	   </div>
+	 </div>
+   </div>
+	  </div>
+	</div>
+	<div class="col-md-5">
+	  <div class="about_1r">
+	    <div class="grid clearfix">
+		  <figure class="effect-jazz mb-0">
+			<a href="#"><img src="{%static "img/banner5.jpg"%}" class="w-100" alt="img25"></a>
+		  </figure>
+	  </div>
+	  </div>
+	</div>
+ </div>
+</div>
+</section>
+
+
+<section id="diff" class="p_3 bg-light">
+<div class="container-xl">
+ <div class="row diff_1 text-center mb-4">
+  <div class="col-md-12">
+    <h3 class="family_1 col_red">We Change Your life &amp; world</h3>
+	<h1 class="mb-0 mt-3 font_50">Charity With Difference</h1>
+  </div>	
+ </div>
+ <div class="row diff_2">
+  <div class="col-md-4">
+    <div class="diff_2i shadow_box p-5 px-4 text-center bg-white">
+	  <span class="col_green font_70 lh-1"><i class="fa fa-globe"></i></span>
+	  <h4 class="mt-4">Get Inspire And Help</h4>
+	  <p class="mt-3 mb-4">Please donate to change the world if you are inspired by us.</p>
+	  <h6 class="mb-0"><a class="button_1" href="#"><i class="fa fa-check-circle me-1"></i> READ MORE </a></h6>
+	</div>
+  </div>	
+  <div class="col-md-4">
+    <div class="diff_2i shadow_box p-5 px-4 text-center bg-white">
+	  <span class="col_green font_70 lh-1"><i class="fa fa-rupee"></i></span>
+	  <h4 class="mt-4">Send Us Donations</h4>
+	  <p class="mt-3 mb-4">Want to help with this pandemic, please join us as a volunteer.</p>
+	  <h6 class="mb-0"><a class="button_1" href="#"><i class="fa fa-check-circle me-1"></i> READ MORE </a></h6>
+	</div>
+  </div>
+  <div class="col-md-4">
+    <div class="diff_2i shadow_box p-5 px-4 text-center bg-white">
+	  <span class="col_green font_70 lh-1"><i class="fa fa-users"></i></span>
+	  <h4 class="mt-4">Become A Volunteer</h4>
+	  <p class="mt-3 mb-4">Creating a donation event can help us directly or indirectly</p>
+	  <h6 class="mb-0"><a class="button_1" href="#"><i class="fa fa-check-circle me-1"></i> READ MORE </a></h6>
+	</div>
+  </div>
+ </div>
+</div>
+</section>
+
+  
+  <section id="team" class="p_3 bg-light">
+<div class="container-xl">
+ <div class="row diff_1 text-center mb-4">
+  <div class="col-md-12">
+    <h3 class="family_1 col_red">We Change Your life &amp; world</h3>
+	<h1 class="mb-0 mt-3 font_50">Meet Our Volunteers</h1>
+  </div>	
+ </div>
+ <div class="row team_1">
+  <div class="col-md-3 col-sm-6">
+    <div class="team_1i text-center">
+	  <div class="team_1i1 position-relative">
+	    <div class="team_1i1i">
+		  <img alt="abc" class="rounded-circle w-100" src="img/19.jpg">
+		</div>
+		<div class="team_1i1i1 position-absolute rounded-circle bg_back">
+		  <ul class="mb-0">
+		    <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-twitter"></i></a></li>
+			 <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-facebook"></i></a></li>
+			  <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-instagram"></i></a></li>
+		  </ul>
+		</div>
+		<div class="team_1i1i2 position-absolute w-100">
+		  <span class="d-inline-block rounded-circle bg-white shadow_box fs-1 col_red"><i class="fa fa-star-o"></i></span>
+		</div>
+	  </div>
+	  <div class="team_1i2 mt-5">
+	    <h5>Lorem Porta</h5>
+		<h6 class="mb-0">Volunteer</h6>
+	  </div>
+	</div>
+  </div>	
+  <div class="col-md-3 col-sm-6">
+    <div class="team_1i text-center">
+	  <div class="team_1i1 position-relative">
+	    <div class="team_1i1i">
+		  <img alt="abc" class="rounded-circle w-100" src="img/20.jpg">
+		</div>
+		<div class="team_1i1i1 position-absolute rounded-circle bg_back">
+		  <ul class="mb-0">
+		    <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-twitter"></i></a></li>
+			 <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-facebook"></i></a></li>
+			  <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-instagram"></i></a></li>
+		  </ul>
+		</div>
+		<div class="team_1i1i2 position-absolute w-100">
+		  <span class="d-inline-block rounded-circle bg-white shadow_box fs-1 col_red"><i class="fa fa-star-o"></i></span>
+		</div>
+	  </div>
+	  <div class="team_1i2 mt-5">
+	    <h5>Ipsum Amet</h5>
+		<h6 class="mb-0">Volunteer</h6>
+	  </div>
+	</div>
+  </div>
+  <div class="col-md-3 col-sm-6">
+    <div class="team_1i text-center">
+	  <div class="team_1i1 position-relative">
+	    <div class="team_1i1i">
+		  <img alt="abc" class="rounded-circle w-100" src="img/21.jpg">
+		</div>
+		<div class="team_1i1i1 position-absolute rounded-circle bg_back">
+		  <ul class="mb-0">
+		    <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-twitter"></i></a></li>
+			 <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-facebook"></i></a></li>
+			  <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-instagram"></i></a></li>
+		  </ul>
+		</div>
+		<div class="team_1i1i2 position-absolute w-100">
+		  <span class="d-inline-block rounded-circle bg-white shadow_box fs-1 col_red"><i class="fa fa-star-o"></i></span>
+		</div>
+	  </div>
+	  <div class="team_1i2 mt-5">
+	    <h5>Sed Augue</h5>
+		<h6 class="mb-0">Volunteer</h6>
+	  </div>
+	</div>
+  </div>
+  <div class="col-md-3 col-sm-6">
+    <div class="team_1i text-center">
+	  <div class="team_1i1 position-relative">
+	    <div class="team_1i1i">
+		  <img alt="abc" class="rounded-circle w-100" src="img/22.jpg">
+		</div>
+		<div class="team_1i1i1 position-absolute rounded-circle bg_back">
+		  <ul class="mb-0">
+		    <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-twitter"></i></a></li>
+			 <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-facebook"></i></a></li>
+			  <li class="d-inline-block"><a class="d-block rounded-circle bg-light rounded_8" href="#"><i class="fa fa-instagram"></i></a></li>
+		  </ul>
+		</div>
+		<div class="team_1i1i2 position-absolute w-100">
+		  <span class="d-inline-block rounded-circle bg-white shadow_box fs-1 col_red"><i class="fa fa-star-o"></i></span>
+		</div>
+	  </div>
+	  <div class="team_1i2 mt-5">
+	    <h5>Nulla Quis</h5>
+		<h6 class="mb-0">Volunteer</h6>
+	  </div>
+	</div>
+  </div>
+ </div>
+</div>
+</section>
+
+
+
+
+
+<script>
+window.onscroll = function() {myFunction()};
+var navbar_sticky = document.getElementById("navbar_sticky");
+var sticky = navbar_sticky.offsetTop;
+var navbar_height = document.querySelector('.navbar').offsetHeight;
+function myFunction() {
+  if (window.pageYOffset >= sticky + navbar_height) {
+    navbar_sticky.classList.add("sticky")
+	document.body.style.paddingTop = navbar_height + 'px';
+  } else {
+    navbar_sticky.classList.remove("sticky");
+	document.body.style.paddingTop = '0'
+  }
+}
+</script>
+
+</body>
+
+
+</html>

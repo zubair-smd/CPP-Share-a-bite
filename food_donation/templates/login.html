@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- External CSS libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <style>
+        /* Full page background image */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("{% static 'img/bg1.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Dark overlay on background image */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+        }
+
+        .login-container {
+            position: relative;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .login-container img {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+
+        .login-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .dropdown{
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #feb47b;
+        }
+
+        .btn {
+            background-color: #d53f34 ;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-bottom:15px;
+        }
+
+        .btn:hover {
+            background-color: #ff7e5f;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .terms {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .terms a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Dark Overlay for better contrast on the text and form -->
+    <div class="overlay"></div>
+
+    <div class="login-container">
+        <!-- Logo Image -->
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <span style="color: red;">{{ message }}</span> 
+        </div>
+    {% endfor %}
+
+        <h2>Login</h2>
+
+        <!-- Login Form -->
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="userRole">Login As</label>
+                <select class="dropdown" id="userRole" name="user_type" required>
+                    <option value="" disabled>Select User </option>
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="NGO">NGO</option>
+                    <option value="HOUSEHOLD">HOUSEHOLD</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="terms">
+            <p>Don't have an account ? <a href="{%url 'signup'%}">SignUp here</a>.</p>
+        </div>    
+    </div>
+
+    <!-- External JS (Optional) -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+
+</html>
